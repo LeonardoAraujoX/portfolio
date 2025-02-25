@@ -1,0 +1,51 @@
+
+.part {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 1rem;
+    border: 1px solid #fff;
+    
+}
+
+.part .trigger {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+}
+.part.open,
+.part:hover{
+    background-color: #55569E;
+    border-color: #55569E;
+}
+.part .trigger:hover {
+    cursor: pointer;
+}
+.part .trigger::after {
+    content: "";
+    display: inline-block;
+    background-image: url('../img/icons/arrow-top.svg');
+    width: 2rem;
+    height: 2rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: .25s;
+    
+}
+.part.open .trigger::after{
+    transform: rotate(180deg);
+}
+.part.open .content{
+    display: inline-block;
+    padding: 0 1rem 1rem 2rem;
+}
+.part .content {
+    display:none;
+}
